@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
-    """Handle basic arithemetic operations."""
-    import sys
     from calculator_1 import add, sub, mul, div
     from sys import argv
     if len(argv) != 4:
@@ -21,4 +19,3 @@ if __name__ == "__main__":
         else:
             print("Unknown operator. Available operators: +, -, * and /")
             exit(1)
-
