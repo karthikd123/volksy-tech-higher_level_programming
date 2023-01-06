@@ -1,5 +1,5 @@
 #!/usr/bin/python3
 def simple_delete(a_dictionary, key=""):
     if a_directory.get(key) is not None:
-        del a_directory[key]
-    return (a_directory)
+        del a_dictionary[key]
+    return (a_dictionary)
