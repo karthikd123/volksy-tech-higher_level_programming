@@ -1,2 +1,2 @@
 #!/usr/bin/python3
-type:ID
+type[Who am I?]
