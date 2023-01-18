@@ -1,12 +1,11 @@
 #!/usr/bin/python3
-"""load_from_json_file
+"""from_json_string
 """
 import json
 
 
-def load_from_json_file(filename):
-    """Returns created object from a JSON file
+def from_json_string(my_str):
+    """Returns a python object represented by a JSON string
     """
 
-    with open(filename, mode="r", encoding="UTF-8") as readFile:
-       return json.load(readFile) 
+    return json.loads(my_str)
