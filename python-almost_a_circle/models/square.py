@@ -3,6 +3,7 @@
 """
 from models.rectangle import Rectangle
 
+
 class Square(Rectangle):
     """Inherits from Rectangle
     """
@@ -29,6 +30,7 @@ class Square(Rectangle):
         return "[{}] ({}) {}/{} - {}".format(self.__class__.__name__,
                                              self.id, self.x, self.y,
                                              self.width)
+
     def update(self, *args, **kwargs):
         if len(kwargs) != 0:
             for k, v in kwargs.items():
