@@ -105,4 +105,3 @@ class Base:
                 # formatting with create()
                 res.append(cls.create(**res_dict))
         return res
-
