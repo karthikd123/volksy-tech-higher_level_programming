@@ -5,11 +5,10 @@ from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """Square Inherits from Rectangle
+    """Inherits from Rectangle
     """
 
     def __init__(self, size, x=0, y=0, id=None):
-        """SUPER"""
         super().__init__(width=size, height=size, x=x, y=y, id=id)
 
     @property
