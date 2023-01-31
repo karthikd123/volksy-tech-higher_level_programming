@@ -7,4 +7,3 @@ JOIN tv_genres c
 ON b.genre_id = c.id
 WHERE c.name = 'Comedy'
 ORDER BY a.title ASC;
-Footer
