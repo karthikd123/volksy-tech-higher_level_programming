@@ -2,7 +2,7 @@
 """List all State objects containing argument from db"""
 import sys
 from sqlalchemy import create_engine
-from sqlalchemy.orm import Session
+from sqlalchemy import Session
 from model_state import Base, State
 
 
