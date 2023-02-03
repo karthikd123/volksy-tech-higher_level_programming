@@ -11,7 +11,7 @@ def filter_names_safe():
         argv[1]: mysql username
         argv[2]: mysql password
         argv[3]: database name
-        argv[4]: state name
+        argv[4]: state name searched
     """
     if len(sys.argv) == 5:
         db = MySQLdb.connect(host="localhost",
