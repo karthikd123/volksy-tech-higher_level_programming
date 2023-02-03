@@ -28,6 +28,5 @@ def get_states_n():
     cur.close()
     db.close()
 
-
 if __name__ == "__main__":
-    get_states_n(i)
+    get_states_n()
