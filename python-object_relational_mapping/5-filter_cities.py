@@ -39,4 +39,4 @@ def list_cities():
 
 
 if __name__ == "__main__":
-    list_cities()    
+    list_cities()
