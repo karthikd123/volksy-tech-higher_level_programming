@@ -1,17 +1,24 @@
 #!/usr/bin/node
-// script that gets the contents of a webpage and stores it in a file.
+// computes the number of tasks completed by user id.
 
-const url = process.argv[2];
-const file = process.argv[3];
-const req = require('request');
-const fileStream = require('fs');
+const request = require('request');
+const process = require('process');
+const apiUrl = process.argv[2];
 
-req(url, function (error, response, body) {
-  if (error) {
-    console.log(error);
-  } else {
-    fileStream.writeFile(file, body, 'utf-8', (error) => {
-      if (error) console.log(error);
+request.get(apiUrl, (err, response, body) => {
+  if (err === null) {
+    const data = JSON.parse(body);
+    const userIds = [...new Set(data.map(todo => todo.userId))];
+    const completedTasksData = {};
+    userIds.forEach((id) => {
+      const completedTasks = data.filter(todo => todo.userId === id && todo.completed);
+      if (completedTasks.length <= 0) {
+        return;
+      }
+      completedTasksData[id] = completedTasks.length;
     });
+    console.log(completedTasksData);
+  } else {
+    console.log(err);
   }
 });
