@@ -1,14 +1,14 @@
 #!/usr/bin/node
-// script that prints the title of a Star Wars movie where the e9pisode number matches a given integer.
+// Get the title of Star Wars using API
+const request = require('request');
+const baseUrl = 'https://swapi-api.hbtn.io/api/films/';
+const filmId = process.argv[2];
 
-const req = require('request');
-const episode = process.argv[2];
-const url = 'http://swapi.co/api/films/' + episode;
-
-req(url, function (error, response, body) {
-  if (error) {
-    console.log(error);
+request.get(baseUrl + filmId, (err, response, body) => {
+  if (err === null) {
+    const data = JSON.parse(body);
+    console.log(data.title);
   } else {
-    console.log(JSON.parse(body).title);
+    console.log(err);
   }
 });
